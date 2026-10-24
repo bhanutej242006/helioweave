@@ -1,0 +1,11 @@
+test_forecast_causal (test_core.CoreTests.test_forecast_causal) ... ok
+test_infeasible_request_reported (test_core.CoreTests.test_infeasible_request_reported) ... ok
+test_lstm_gradient (test_core.CoreTests.test_lstm_gradient) ... ok
+test_optimizer_known_solution (test_core.CoreTests.test_optimizer_known_solution) ... ok
+test_partition_targets (test_core.CoreTests.test_partition_targets) ... ok
+test_projection_invariants (test_core.CoreTests.test_projection_invariants) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.057s
+
+OK

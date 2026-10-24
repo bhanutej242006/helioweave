@@ -1,0 +1,60 @@
+{
+  "numpy": {
+    "version": "2.5.3",
+    "windows_python314_wheels": [
+      "numpy-2.5.3-cp314-cp314t-win_amd64.whl",
+      "numpy-2.5.3-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "scipy": {
+    "version": "1.18.1",
+    "windows_python314_wheels": [
+      "scipy-1.18.1-cp314-cp314t-win_amd64.whl",
+      "scipy-1.18.1-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "scikit-learn": {
+    "version": "1.9.1",
+    "windows_python314_wheels": [
+      "scikit_learn-1.9.1-cp314-cp314t-win_amd64.whl",
+      "scikit_learn-1.9.1-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "lightgbm": {
+    "version": "4.7.0",
+    "windows_python314_wheels": [
+      "lightgbm-4.7.0-py3-none-win_amd64.whl"
+    ]
+  },
+  "xgboost": {
+    "version": "3.4.1",
+    "windows_python314_wheels": [
+      "xgboost-3.4.1-py3-none-win_amd64.whl"
+    ]
+  },
+  "catboost": {
+    "version": "1.2.10",
+    "windows_python314_wheels": [
+      "catboost-1.2.10-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "flask": {
+    "version": "3.1.3",
+    "windows_python314_wheels": [
+      "flask-3.1.3-py3-none-any.whl"
+    ]
+  },
+  "pandas": {
+    "version": "3.0.6",
+    "windows_python314_wheels": [
+      "pandas-3.0.6-cp314-cp314t-win_amd64.whl",
+      "pandas-3.0.6-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "joblib": {
+    "version": "1.6.0",
+    "windows_python314_wheels": [
+      "joblib-1.6.0-py3-none-any.whl"
+    ]
+  }
+}

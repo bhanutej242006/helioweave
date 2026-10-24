@@ -1,0 +1,29 @@
+{
+  "source": "Kaggle / anikannal/solar-power-generation-data",
+  "plant": 1,
+  "interval_minutes": 15,
+  "rows": 3264,
+  "valid_rows": 3085,
+  "inverters": 22,
+  "duplicates": 0,
+  "training_scale_mean_inverter_ac": 1325.0096590454543,
+  "start": "2020-05-15T00:00:00",
+  "end": "2020-06-17T23:45:00",
+  "split_indices": [
+    1958,
+    2284,
+    2611
+  ],
+  "split_dates": [
+    "2020-06-04T09:30:00",
+    "2020-06-07T19:00:00",
+    "2020-06-11T04:45:00"
+  ],
+  "treatment": "Mean AC across available inverters; require >=90% inverter coverage and weather. Invalid intervals forward-filled only for history; invalid forecast targets excluded. Scenario PV = normalized AC x chosen capacity.",
+  "sha256": {
+    "Plant_2_Generation_Data.csv": "9b735e9278774d4d1dd4601047315ef50b3793244d892446f6aabf4fae63bd37",
+    "Plant_1_Weather_Sensor_Data.csv": "91325041328745c288cb809aebd8b1b59cde54284500902ead1fb393499d6806",
+    "Plant_2_Weather_Sensor_Data.csv": "cafd80885a51b88521b3301cffa4e4f013e2516fcb3478b439a81855edac3a64",
+    "Plant_1_Generation_Data.csv": "882f75f1c295946633617646cc92343ddb6fb821a2546c82f7e5cc737a13624e"
+  }
+}

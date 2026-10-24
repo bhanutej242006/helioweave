@@ -1,0 +1,399 @@
+{
+  "python_tested": "3.14.7",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "source": {
+    "source": "Kaggle / anikannal/solar-power-generation-data",
+    "plant": 1,
+    "interval_minutes": 15,
+    "rows": 3264,
+    "valid_rows": 3085,
+    "inverters": 22,
+    "duplicates": 0,
+    "training_scale_mean_inverter_ac": 1325.0096590454543,
+    "start": "2020-05-15T00:00:00",
+    "end": "2020-06-17T23:45:00",
+    "split_indices": [
+      1958,
+      2284,
+      2611
+    ],
+    "split_dates": [
+      "2020-06-04T09:30:00",
+      "2020-06-07T19:00:00",
+      "2020-06-11T04:45:00"
+    ],
+    "treatment": "Mean AC across available inverters; require >=90% inverter coverage and weather. Invalid intervals forward-filled only for history; invalid forecast targets excluded. Scenario PV = normalized AC x chosen capacity.",
+    "sha256": {
+      "Plant_2_Generation_Data.csv": "9b735e9278774d4d1dd4601047315ef50b3793244d892446f6aabf4fae63bd37",
+      "Plant_1_Weather_Sensor_Data.csv": "91325041328745c288cb809aebd8b1b59cde54284500902ead1fb393499d6806",
+      "Plant_2_Weather_Sensor_Data.csv": "cafd80885a51b88521b3301cffa4e4f013e2516fcb3478b439a81855edac3a64",
+      "Plant_1_Generation_Data.csv": "882f75f1c295946633617646cc92343ddb6fb821a2546c82f7e5cc737a13624e"
+    }
+  },
+  "samples": {
+    "train": 736,
+    "early_stop_validation": 252,
+    "calibration": 312,
+    "test": 621
+  },
+  "lstm": {
+    "mae_normalized": 0.06930055158723807,
+    "rmse_normalized": 0.12898051432866958,
+    "daylight_rmse_normalized": 0.1766842956176272,
+    "rmse_by_horizon": [
+      0.1288991176026857,
+      0.12803285082051563,
+      0.12894710610421323,
+      0.12871546836712952,
+      0.13061761562016821,
+      0.12932571834293144,
+      0.13066059892230653,
+      0.12928728455029884,
+      0.12894283659880865,
+      0.1292744195823761,
+      0.12910098710045947,
+      0.12923769843216823,
+      0.1290736176804039,
+      0.12853079904445416,
+      0.12793265479460458,
+      0.1270635406877137
+    ]
+  },
+  "previous_day": {
+    "mae_normalized": 0.06771470461209,
+    "rmse_normalized": 0.12885996157318394,
+    "daylight_rmse_normalized": 0.176583882509294,
+    "rmse_by_horizon": [
+      0.12939011077240467,
+      0.1293782601371392,
+      0.12937810392845558,
+      0.1293754085154066,
+      0.1293686969117971,
+      0.12936655686204807,
+      0.12929357741185682,
+      0.12926798633990172,
+      0.12915726250171947,
+      0.1290106357776665,
+      0.12893878159135946,
+      0.12883019327030154,
+      0.12869393610432744,
+      0.12820447737625917,
+      0.12726714873005374,
+      0.12680216007721581
+    ]
+  },
+  "coverage_90_by_horizon": [
+    0.8760064412238325,
+    0.8711755233494364,
+    0.8518518518518519,
+    0.8760064412238325,
+    0.8631239935587761,
+    0.8534621578099839,
+    0.8502415458937198,
+    0.8599033816425121,
+    0.8534621578099839,
+    0.8615136876006442,
+    0.8631239935587761,
+    0.8711755233494364,
+    0.8534621578099839,
+    0.8534621578099839,
+    0.8679549114331723,
+    0.8695652173913043
+  ],
+  "interval_radius_normalized": [
+    0.1992734111843888,
+    0.19907748127602837,
+    0.18455117217574124,
+    0.19672174541724544,
+    0.18886769518485513,
+    0.18730431537089254,
+    0.18714500856330396,
+    0.18968710759490193,
+    0.1816700889863163,
+    0.18932584350844794,
+    0.18778940642643924,
+    0.19442344194560945,
+    0.18416673624110114,
+    0.1831956798277099,
+    0.18970648235138193,
+    0.19114141096821985
+  ],
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_mse": 0.02535163264532007,
+      "validation_mse": 0.027981064711331882
+    },
+    {
+      "epoch": 2,
+      "train_mse": 0.02048474196739226,
+      "validation_mse": 0.027254285414575505
+    },
+    {
+      "epoch": 3,
+      "train_mse": 0.019671867562142616,
+      "validation_mse": 0.027011295871237243
+    },
+    {
+      "epoch": 4,
+      "train_mse": 0.019932083787196787,
+      "validation_mse": 0.026952930470657294
+    },
+    {
+      "epoch": 5,
+      "train_mse": 0.01974596485567767,
+      "validation_mse": 0.026973373320821486
+    },
+    {
+      "epoch": 6,
+      "train_mse": 0.019849599586013497,
+      "validation_mse": 0.026977174129931166
+    },
+    {
+      "epoch": 7,
+      "train_mse": 0.01973691143968947,
+      "validation_mse": 0.026962695404894117
+    },
+    {
+      "epoch": 8,
+      "train_mse": 0.019560205731850733,
+      "validation_mse": 0.026988785801017563
+    },
+    {
+      "epoch": 9,
+      "train_mse": 0.019208390730163217,
+      "validation_mse": 0.02697078631347337
+    },
+    {
+      "epoch": 10,
+      "train_mse": 0.019857846707926095,
+      "validation_mse": 0.026987974486261102
+    },
+    {
+      "epoch": 11,
+      "train_mse": 0.01941670406287083,
+      "validation_mse": 0.026988457876425117
+    },
+    {
+      "epoch": 12,
+      "train_mse": 0.019455330201365202,
+      "validation_mse": 0.026961572367149453
+    },
+    {
+      "epoch": 13,
+      "train_mse": 0.01935328451078768,
+      "validation_mse": 0.026997442299980287
+    },
+    {
+      "epoch": 14,
+      "train_mse": 0.01960600119948475,
+      "validation_mse": 0.026986318539179724
+    },
+    {
+      "epoch": 15,
+      "train_mse": 0.019277354987006206,
+      "validation_mse": 0.027015954330418108
+    },
+    {
+      "epoch": 16,
+      "train_mse": 0.01935725737650745,
+      "validation_mse": 0.026978802780255797
+    },
+    {
+      "epoch": 17,
+      "train_mse": 0.019537683687162733,
+      "validation_mse": 0.02700189080396546
+    },
+    {
+      "epoch": 18,
+      "train_mse": 0.019305407003651978,
+      "validation_mse": 0.0269924800852271
+    },
+    {
+      "epoch": 19,
+      "train_mse": 0.01970021016671545,
+      "validation_mse": 0.02698744322126416
+    },
+    {
+      "epoch": 20,
+      "train_mse": 0.01979908813318164,
+      "validation_mse": 0.027261876293022135
+    },
+    {
+      "epoch": 21,
+      "train_mse": 0.018956295523476618,
+      "validation_mse": 0.027122911992203465
+    },
+    {
+      "epoch": 22,
+      "train_mse": 0.019205345300593295,
+      "validation_mse": 0.02701794270337567
+    },
+    {
+      "epoch": 23,
+      "train_mse": 0.019098351928247593,
+      "validation_mse": 0.027053124939778267
+    },
+    {
+      "epoch": 24,
+      "train_mse": 0.018731283418348597,
+      "validation_mse": 0.027110861003358643
+    },
+    {
+      "epoch": 25,
+      "train_mse": 0.01921327708170411,
+      "validation_mse": 0.027148980365741194
+    }
+  ],
+  "note": "Overlapping test windows and short 34-day source; uncertainty is empirical, not a coverage guarantee.",
+  "scheduler": {
+    "teacher": "lexicographic perfect-information HiGHS LP",
+    "training_rows": 10560,
+    "validation_rows": 2880,
+    "teacher_days": [
+      2,
+      3,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "history": [
+      {
+        "epoch": 1,
+        "train_mse": 0.0634864684865014,
+        "validation_mse": 0.059444098450926124
+      },
+      {
+        "epoch": 2,
+        "train_mse": 0.060714464139135435,
+        "validation_mse": 0.05825331474633673
+      },
+      {
+        "epoch": 3,
+        "train_mse": 0.059700893593493454,
+        "validation_mse": 0.06269497621621826
+      },
+      {
+        "epoch": 4,
+        "train_mse": 0.05884427281147069,
+        "validation_mse": 0.05710455294660696
+      },
+      {
+        "epoch": 5,
+        "train_mse": 0.05873628695343884,
+        "validation_mse": 0.05768037545052235
+      },
+      {
+        "epoch": 6,
+        "train_mse": 0.0577959117255907,
+        "validation_mse": 0.05668213925354478
+      },
+      {
+        "epoch": 7,
+        "train_mse": 0.05853063833115871,
+        "validation_mse": 0.057212555192930906
+      },
+      {
+        "epoch": 8,
+        "train_mse": 0.057594717651432384,
+        "validation_mse": 0.057328193074465496
+      },
+      {
+        "epoch": 9,
+        "train_mse": 0.058104883045809554,
+        "validation_mse": 0.055815370934399526
+      },
+      {
+        "epoch": 10,
+        "train_mse": 0.0571257760110304,
+        "validation_mse": 0.05734922987779072
+      },
+      {
+        "epoch": 11,
+        "train_mse": 0.05704629241160291,
+        "validation_mse": 0.05577542138430837
+      },
+      {
+        "epoch": 12,
+        "train_mse": 0.05747668798079197,
+        "validation_mse": 0.05554074452378558
+      },
+      {
+        "epoch": 13,
+        "train_mse": 0.057049597382939174,
+        "validation_mse": 0.055806911763410155
+      },
+      {
+        "epoch": 14,
+        "train_mse": 0.05695029283354685,
+        "validation_mse": 0.05571095517609742
+      },
+      {
+        "epoch": 15,
+        "train_mse": 0.05718751440627013,
+        "validation_mse": 0.05633589241236433
+      },
+      {
+        "epoch": 16,
+        "train_mse": 0.056927995821615326,
+        "validation_mse": 0.05533827554899617
+      },
+      {
+        "epoch": 17,
+        "train_mse": 0.05658253333169006,
+        "validation_mse": 0.05481773661953518
+      },
+      {
+        "epoch": 18,
+        "train_mse": 0.05676373509211976,
+        "validation_mse": 0.05486870143508906
+      },
+      {
+        "epoch": 19,
+        "train_mse": 0.056835104513080346,
+        "validation_mse": 0.054970014016015215
+      },
+      {
+        "epoch": 20,
+        "train_mse": 0.05676055575722877,
+        "validation_mse": 0.0555762184469241
+      },
+      {
+        "epoch": 21,
+        "train_mse": 0.05652337603033146,
+        "validation_mse": 0.05585727227783581
+      },
+      {
+        "epoch": 22,
+        "train_mse": 0.056242421901041256,
+        "validation_mse": 0.055607371154470106
+      },
+      {
+        "epoch": 23,
+        "train_mse": 0.05645535054834274,
+        "validation_mse": 0.05568095994919457
+      },
+      {
+        "epoch": 24,
+        "train_mse": 0.05579156968019367,
+        "validation_mse": 0.05508421047276804
+      },
+      {
+        "epoch": 25,
+        "train_mse": 0.055675788336547766,
+        "validation_mse": 0.055406720964290015
+      }
+    ],
+    "caveat": "Training inputs use previous-day forecasts. Deployment uses solar LSTM forecasts; distribution shift and teacher-forcing error are evaluated by closed-loop replay."
+  }
+}

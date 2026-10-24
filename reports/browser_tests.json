@@ -1,0 +1,9 @@
+{
+  "errors": [],
+  "webglCanvas": 1,
+  "horizontalOverflow": false,
+  "datasetPagination": true,
+  "predictions": true,
+  "schedule": true,
+  "lstmReplay": true
+}

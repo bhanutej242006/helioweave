@@ -1,0 +1,18 @@
+test_all_requested_models_trained (test_project.ProjectTests.test_all_requested_models_trained) ... ok
+test_assets_local (test_project.ProjectTests.test_assets_local) ... ok
+test_bad_batch (test_project.ProjectTests.test_bad_batch) ... ok
+test_bad_payloads (test_project.ProjectTests.test_bad_payloads) ... ok
+test_batch_predictions (test_project.ProjectTests.test_batch_predictions) ... ok
+test_building_infeasibility_rejected (test_project.ProjectTests.test_building_infeasibility_rejected) ... ok
+test_energy_and_power_constraints (test_project.ProjectTests.test_energy_and_power_constraints) ... ok
+test_exact_schema (test_project.ProjectTests.test_exact_schema) ... ok
+test_impossible_request_has_shortfall (test_project.ProjectTests.test_impossible_request_has_shortfall) ... ok
+test_lstm_retained (test_project.ProjectTests.test_lstm_retained) ... ok
+test_prediction_finite (test_project.ProjectTests.test_prediction_finite) ... ok
+test_stacking_split_isolation (test_project.ProjectTests.test_stacking_split_isolation) ... ok
+test_target_not_used_as_feature (test_project.ProjectTests.test_target_not_used_as_feature) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.766s
+
+OK

@@ -1,0 +1,386 @@
+{
+  "dataset": "stucom/solar-energy-power-generation-dataset",
+  "python": "3.14.7",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "flask": "3.1.3",
+    "pandas": "3.0.6",
+    "joblib": "1.6.0"
+  },
+  "sha256": "c5c00725a94956c78dec070219c53c16a12c8c5740afdf75e272a097124201aa",
+  "raw_rows": 4213,
+  "clean_rows": 4213,
+  "removed_rows": 0,
+  "split": {
+    "train": [
+      0,
+      2527
+    ],
+    "validation": [
+      2527,
+      3370
+    ],
+    "test": [
+      3370,
+      4213
+    ]
+  },
+  "split_note": "Contiguous source-row blocks, 60/20/20. Source CSV has no timestamp; chronological forecasting validation cannot be claimed.",
+  "stacking_folds": [
+    {
+      "train_first": 0,
+      "train_last": 506,
+      "held_out_first": 507,
+      "held_out_last": 1011
+    },
+    {
+      "train_first": 0,
+      "train_last": 1011,
+      "held_out_first": 1012,
+      "held_out_last": 1516
+    },
+    {
+      "train_first": 0,
+      "train_last": 1516,
+      "held_out_first": 1517,
+      "held_out_last": 2021
+    },
+    {
+      "train_first": 0,
+      "train_last": 2021,
+      "held_out_first": 2022,
+      "held_out_last": 2526
+    }
+  ],
+  "stacking_oof_rows": 2020,
+  "selected_on_validation": "Stacking Model",
+  "validation": {
+    "LightGBM": {
+      "mae_kw": 328.0983895223522,
+      "rmse_kw": 481.9897415893444,
+      "r2": 0.7200834427795162
+    },
+    "XGBoost": {
+      "mae_kw": 322.8226843337656,
+      "rmse_kw": 470.20591826305906,
+      "r2": 0.7336030918276404
+    },
+    "CatBoost": {
+      "mae_kw": 313.03141022969106,
+      "rmse_kw": 464.2876710421945,
+      "r2": 0.7402668990854261
+    },
+    "KNN": {
+      "mae_kw": 335.001703103527,
+      "rmse_kw": 478.3625248714186,
+      "r2": 0.7242806176890958
+    },
+    "Stacking Model": {
+      "mae_kw": 309.3342098826279,
+      "rmse_kw": 460.6617549332831,
+      "r2": 0.7443078980290203
+    }
+  },
+  "test": {
+    "LightGBM": {
+      "mae_kw": 510.0551689371274,
+      "rmse_kw": 675.3378980638511,
+      "r2": 0.4472447227445451
+    },
+    "XGBoost": {
+      "mae_kw": 493.59315884243273,
+      "rmse_kw": 646.9753891409048,
+      "r2": 0.4926984667257883
+    },
+    "CatBoost": {
+      "mae_kw": 500.3305632532988,
+      "rmse_kw": 638.9715123152108,
+      "r2": 0.5051727064775876
+    },
+    "KNN": {
+      "mae_kw": 530.0909043587892,
+      "rmse_kw": 686.8755111421083,
+      "r2": 0.4281966177830613
+    },
+    "Stacking Model": {
+      "mae_kw": 490.8707652373673,
+      "rmse_kw": 638.5121496980918,
+      "r2": 0.505883922706444
+    }
+  },
+  "scale_kw": 3056.7941,
+  "target_stats": {
+    "min": 0.000595238,
+    "max": 3056.7941,
+    "mean": 1134.3473126838471
+  },
+  "features": [
+    {
+      "name": "temperature_2_m_above_gnd",
+      "label": "Air temperature \u00b7 2 m",
+      "unit": "source temperature units",
+      "min": -5.35,
+      "max": 34.9,
+      "median": 14.39,
+      "missing": 0
+    },
+    {
+      "name": "relative_humidity_2_m_above_gnd",
+      "label": "Relative humidity \u00b7 2 m",
+      "unit": "%",
+      "min": 9.0,
+      "max": 100.0,
+      "median": 47.0,
+      "missing": 0
+    },
+    {
+      "name": "mean_sea_level_pressure_MSL",
+      "label": "Sea-level pressure",
+      "unit": "source pressure units",
+      "min": 997.5,
+      "max": 1046.8,
+      "median": 1018.2,
+      "missing": 0
+    },
+    {
+      "name": "total_precipitation_sfc",
+      "label": "Total precipitation",
+      "unit": "source precipitation units",
+      "min": 0.0,
+      "max": 3.2,
+      "median": 0.0,
+      "missing": 0
+    },
+    {
+      "name": "snowfall_amount_sfc",
+      "label": "Snowfall amount",
+      "unit": "source snowfall units",
+      "min": 0.0,
+      "max": 1.68,
+      "median": 0.0,
+      "missing": 0
+    },
+    {
+      "name": "total_cloud_cover_sfc",
+      "label": "Total cloud cover",
+      "unit": "%",
+      "min": 0.0,
+      "max": 100.0,
+      "median": 7.2,
+      "missing": 0
+    },
+    {
+      "name": "high_cloud_cover_high_cld_lay",
+      "label": "High cloud cover",
+      "unit": "%",
+      "min": 0.0,
+      "max": 100.0,
+      "median": 0.0,
+      "missing": 0
+    },
+    {
+      "name": "medium_cloud_cover_mid_cld_lay",
+      "label": "Medium cloud cover",
+      "unit": "%",
+      "min": 0.0,
+      "max": 100.0,
+      "median": 0.0,
+      "missing": 0
+    },
+    {
+      "name": "low_cloud_cover_low_cld_lay",
+      "label": "Low cloud cover",
+      "unit": "%",
+      "min": 0.0,
+      "max": 100.0,
+      "median": 0.0,
+      "missing": 0
+    },
+    {
+      "name": "shortwave_radiation_backwards_sfc",
+      "label": "Shortwave radiation",
+      "unit": "source radiation units",
+      "min": 0.0,
+      "max": 952.3,
+      "median": 404.95,
+      "missing": 0
+    },
+    {
+      "name": "wind_speed_10_m_above_gnd",
+      "label": "Wind speed \u00b7 10 m",
+      "unit": "source wind units",
+      "min": 0.0,
+      "max": 61.18,
+      "median": 15.0,
+      "missing": 0
+    },
+    {
+      "name": "wind_direction_10_m_above_gnd",
+      "label": "Wind direction \u00b7 10 m",
+      "unit": "\u00b0",
+      "min": 0.84,
+      "max": 360.0,
+      "median": 202.75,
+      "missing": 0
+    },
+    {
+      "name": "wind_speed_80_m_above_gnd",
+      "label": "Wind speed \u00b7 80 m",
+      "unit": "source wind units",
+      "min": 0.36,
+      "max": 66.88,
+      "median": 16.87,
+      "missing": 0
+    },
+    {
+      "name": "wind_direction_80_m_above_gnd",
+      "label": "Wind direction \u00b7 80 m",
+      "unit": "\u00b0",
+      "min": 1.12,
+      "max": 360.0,
+      "median": 194.68,
+      "missing": 0
+    },
+    {
+      "name": "wind_speed_900_mb",
+      "label": "Wind speed \u00b7 900 mb",
+      "unit": "source wind units",
+      "min": 0.0,
+      "max": 61.11,
+      "median": 14.98,
+      "missing": 0
+    },
+    {
+      "name": "wind_direction_900_mb",
+      "label": "Wind direction \u00b7 900 mb",
+      "unit": "\u00b0",
+      "min": 1.36,
+      "max": 360.0,
+      "median": 194.74,
+      "missing": 0
+    },
+    {
+      "name": "wind_gust_10_m_above_gnd",
+      "label": "Wind gust \u00b7 10 m",
+      "unit": "source wind units",
+      "min": 0.72,
+      "max": 84.96,
+      "median": 19.08,
+      "missing": 0
+    },
+    {
+      "name": "angle_of_incidence",
+      "label": "Angle of incidence",
+      "unit": "\u00b0",
+      "min": 3.7553228,
+      "max": 121.63592,
+      "median": 49.210486,
+      "missing": 0
+    },
+    {
+      "name": "zenith",
+      "label": "Solar zenith",
+      "unit": "\u00b0",
+      "min": 17.727761,
+      "max": 128.41537,
+      "median": 59.068458,
+      "missing": 0
+    },
+    {
+      "name": "azimuth",
+      "label": "Solar azimuth",
+      "unit": "\u00b0",
+      "min": 54.379093,
+      "max": 289.04518,
+      "median": 164.35537,
+      "missing": 0
+    }
+  ],
+  "importance": [
+    {
+      "feature": "angle_of_incidence",
+      "increase_mae_kw": 215.21650600145063
+    },
+    {
+      "feature": "zenith",
+      "increase_mae_kw": 157.65141411229104
+    },
+    {
+      "feature": "azimuth",
+      "increase_mae_kw": 139.84772184498632
+    },
+    {
+      "feature": "total_cloud_cover_sfc",
+      "increase_mae_kw": 49.30852935184462
+    },
+    {
+      "feature": "relative_humidity_2_m_above_gnd",
+      "increase_mae_kw": 27.17459790941399
+    },
+    {
+      "feature": "shortwave_radiation_backwards_sfc",
+      "increase_mae_kw": 25.27391321898392
+    },
+    {
+      "feature": "mean_sea_level_pressure_MSL",
+      "increase_mae_kw": 8.594939799115688
+    },
+    {
+      "feature": "temperature_2_m_above_gnd",
+      "increase_mae_kw": 8.410021426165391
+    },
+    {
+      "feature": "wind_gust_10_m_above_gnd",
+      "increase_mae_kw": 8.36274496733362
+    },
+    {
+      "feature": "low_cloud_cover_low_cld_lay",
+      "increase_mae_kw": 2.1632692851926927
+    },
+    {
+      "feature": "wind_direction_10_m_above_gnd",
+      "increase_mae_kw": 2.116246589131341
+    },
+    {
+      "feature": "high_cloud_cover_high_cld_lay",
+      "increase_mae_kw": 1.9056279089934947
+    },
+    {
+      "feature": "wind_direction_80_m_above_gnd",
+      "increase_mae_kw": 1.3720614129029893
+    },
+    {
+      "feature": "wind_speed_80_m_above_gnd",
+      "increase_mae_kw": 1.1622682782612135
+    },
+    {
+      "feature": "medium_cloud_cover_mid_cld_lay",
+      "increase_mae_kw": 1.1375927067060918
+    },
+    {
+      "feature": "wind_speed_900_mb",
+      "increase_mae_kw": 0.6509493348977268
+    },
+    {
+      "feature": "snowfall_amount_sfc",
+      "increase_mae_kw": 0.0
+    },
+    {
+      "feature": "wind_direction_900_mb",
+      "increase_mae_kw": -0.03869571679426068
+    },
+    {
+      "feature": "wind_speed_10_m_above_gnd",
+      "increase_mae_kw": -0.07429553868623391
+    },
+    {
+      "feature": "total_precipitation_sfc",
+      "increase_mae_kw": -0.1133894751698487
+    }
+  ]
+}
